@@ -1,1 +1,1 @@
-# svelte-pocketbase-boilerplate
+# Svelte + Vite + Pocketbase = ❤️
