@@ -1,19 +1,9 @@
 <script>
 	import PocketBase from 'pocketbase'
-	import * as socialAuthProviders from './socialProviders'
+	import { createSocialAuthDispatcher } from './socialAuth'
 
 	const client = new PocketBase(import.meta.env.VITE_POCKET_BASE_HOSTNAME)
-
-	const socialAuth = async (provider) => {
-		const authData = await client.users.authViaOAuth2(
-			provider, 
-			socialAuthProviders[provider].code, 
-			socialAuthProviders[provider].verifier, 
-			socialAuthProviders[provider].redirectUrl
-		);
-
-		return authData
-	}
+	const socialAuth = createSocialAuthDispatcher(client)
 </script>
 
 <main>
