@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+    pocketbase:
+        build: .
+        container_name: pocketbase
+  #      command:
+   #         - --encryptionEnv #optional
+    #        - ENCRYPTION #optional
+     #   environment:
+      #      ENCRYPTION: example #optional
+        network_mode: host
+        volumes:
+            - ./pocketbase/pb_data:/pb_data
+#            - ./pocketbase/pb_:/pb_public #optional
